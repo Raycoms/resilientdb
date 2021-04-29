@@ -1,7 +1,7 @@
 #ifndef _CONFIG_H_ 
 #define _CONFIG_H_ 
 // Specify the number of servers or replicas 
-#define NODE_CNT 4
+#define NODE_CNT 60
 // Number of worker threads at primary. For RBFT (6) and other algorithms (5). 
 #define THREAD_CNT 5 
 #define REM_THREAD_CNT 3
@@ -9,7 +9,7 @@
 #define CORE_CNT 8 
 #define PART_CNT 1 
 // Specify the number of clients. 
-#define CLIENT_NODE_CNT 1
+#define CLIENT_NODE_CNT 10
 #define CLIENT_THREAD_CNT 2 
 #define CLIENT_REM_THREAD_CNT 1 
 #define CLIENT_SEND_THREAD_CNT 1 
@@ -147,10 +147,10 @@
 #define PARTITIONED 0 
 #define REPLICATED 1 
 // To select the amount of time to warmup and run. 
-#define DONE_TIMER 2 * 60 * BILLION 
-#define WARMUP_TIMER 1 * 60 * BILLION 
+#define DONE_TIMER 5 * 60 * BILLION
+#define WARMUP_TIMER 1 * 15 * BILLION
 // Select the consensus algorithm to run.  
-#define CONSENSUS PBFT
+#define CONSENSUS HOTSTUFF
 #define DBFT 1 
 #define PBFT 2 
 #define ZYZZYVA 3 
@@ -167,7 +167,7 @@
 // Number of threads to create batches at primary replica.  
 #define BATCH_THREADS 2 
 // Size of each batch. 
-#define BATCH_SIZE 100 
+#define BATCH_SIZE 300
 #define BATCH_ENABLE BSET 
 #define BSET 1 
 #define BUNSET 0 
